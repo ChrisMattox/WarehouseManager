@@ -29,7 +29,7 @@ router.get('/warehouse', function(req, res) {
 });
 
 //customers  view
-router.get('/cusotmers', function(req, res) {
+router.get('/customers', function(req, res) {
   console.log('get request');
   // get name days from DB
   pg.connect(connectionString, function(err, client, done) {
@@ -62,13 +62,7 @@ router.get('/orders', function(req, res) {
       res.sendStatus(500);
     }
 
-    client.query('	SELECT order_date, description, street, city, state, zip, '+
-    'address_type, first_name, last_name	FROM orders '+
-	'JOIN addresses ON orders.address_id=addresses.id'+
-	'JOIN line_items ON line_items.order_id=orders.id'+
-	'JOIN products ON products.id=line_items.product_id'+
-	'JOIN customers ON addresses.customer_id = customers.id;', function(err, result) {
-      done(); // close the connection.
+    client.query('	SELECT order_date, description, street, city, state, zip, address_type, first_name, last_name	FROM orders JOIN addresses ON orders.address_id=addresses.id JOIN line_items ON line_items.order_id=orders.id JOIN products ON products.id=line_items.product_id JOIN customers ON addresses.customer_id = customers.id;', function(err, result) {      done(); // close the connection.
       // console.log('the client!:', client);
       if(err) {
         console.log('select query error: ', err);

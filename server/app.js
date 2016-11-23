@@ -1,7 +1,13 @@
 var express = require('express');
 var app = express();
 var path = require('path');
+// var warehouse = require('./routes/warehouse');
+var routes = require('./routes/routes');
+var bodyParser = require('body-parser');
 
+app.use(bodyParser.json());
+
+app.use('/routes', routes);
 
 // serve static files
 app.use(express.static(path.resolve('./server/public')));
