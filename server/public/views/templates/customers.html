@@ -1,0 +1,10 @@
+<table class="table table-hover table-inverse">
+  <tr>
+<th>First Name</th>
+<th>Last Name</th>
+</tr>
+<tr ng-repeat='person in customers.customers'>
+  <td ng-model='person.first_name' >{{person.first_name}}</td>
+  <td ng-model='person.last_name'>{{person.last_name}}</td>
+</tr>
+</table>
