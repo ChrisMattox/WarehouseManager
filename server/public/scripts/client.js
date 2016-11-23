@@ -7,20 +7,20 @@ app.config(['$routeProvider', function($routeProvider) {
       controller: 'HomeController',
       controllerAs: 'home'
     })
-    .when('/potato' ,{
-      templateUrl: '/views/templates/potato.html',
-      controller: 'PotatoController',
-      controllerAs: 'potato'
+    .when('/warehouse' ,{
+      templateUrl: '/views/templates/warehouse.html',
+      controller: 'WarehouseController',
+      controllerAs: 'warehouse'
     })
-    .when('/armfalloffboy' ,{
-      templateUrl: '/views/templates/armfalloffboy.html',
-      controller: 'ArmFallOfBoyController',
-      controllerAs: 'armFallOffBoy'
+    .when('/customers' ,{
+      templateUrl: '/views/templates/customers.html',
+      controller: 'CustomersController',
+      controllerAs: 'customers'
     })
-    .when('/hindsightlad' ,{
-      templateUrl: '/views/templates/hindsightlad.html',
-      controller: 'HindsightLadController',
-      controllerAs: 'hindsightLad'
+    .when('/orders' ,{
+      templateUrl: '/views/templates/orders.html',
+      controller: 'OrdersController',
+      controllerAs: 'orders'
     })
     .otherwise({
       redirectTo: 'home'
@@ -35,21 +35,21 @@ app.controller('HomeController', function() {
 
 });
 
-app.controller('PotatoController', function() {
-  console.log('potato controller running');
+app.controller('WarehouseController', function() {
+  console.log('warehouse controller running');
   var self = this;
 
 });
 
-app.controller('ArmFallOfBoyController', function() {
-  console.log('Arm Fall Off Boy controller running');
+app.controller('CustomerController', function() {
+  console.log('customer controller running');
   var self = this;
 
 });
 
-app.controller('HindsightLadController', function() {
-  console.log('HindsightLad controller running');
+app.controller('OrdersController', function() {
+  console.log('orders controller running');
   var self = this;
-  
+
 
 });
