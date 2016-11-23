@@ -38,6 +38,15 @@ app.controller('HomeController', function() {
 app.controller('WarehouseController', function() {
   console.log('warehouse controller running');
   var self = this;
+  
+  function getBooks() {
+    $http.get('/books')
+      .then(function(response) {
+        console.log(response.data);
+        self.books = response.data;
+
+      });
+  }
 
 });
 
