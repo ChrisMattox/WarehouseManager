@@ -78,7 +78,7 @@ app.controller('OrdersController',["$http", function($http) {
     $http.get('routes/orders')
     .then(function(response){
       self.orders = response.data;
-      console.log("order data", self.orders);
+      console.log("orders data", self.orders);
     });
   }
 
