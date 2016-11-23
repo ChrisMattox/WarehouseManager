@@ -36,46 +36,51 @@ app.controller('HomeController', function() {
 });
 
 //warehouse controller
-app.controller('WarehouseController', function() {
+app.controller('WarehouseController',["$http", function($http) {
   console.log('warehouse controller running');
   var self = this;
   self.message = "Warehouse controller is the best!";
   self.warehouses = [];
-
-
+    getWarehouse();
 //get request for warehouse data
   function getWarehouse() {
-    $http.get('/warehouse')
+    $http.get('routes/warehouse')
     .then(function(response){
       self.warehouses = response.data;
+      console.log("warehouse data", self.warehouses);
     });
   }
 
-});//end warehouse controller
+}]);//end warehouse controller
 
-app.controller('CustomerController', function() {
+app.controller('CustomersController',["$http", function($http){
   console.log('customer controller running');
   var self = this;
-
+  self.customers = [];
+  getCustomer();
   //request to get customer data
   function getCustomer() {
-    $http.get('/customer')
+    $http.get('routes/customers')
     .then(function(response){
-      self.customer = response.data;
+      self.customers = response.data;
+      console.log("customer data", self.customers);
     });
   }
 
-});
+}]);
 
-app.controller('OrdersController', function() {
+app.controller('OrdersController',["$http", function($http) {
   console.log('orders controller running');
   var self = this;
+  self.orders = [];
+  getOrders();
   function getOrders() {
     $http.get('routes/orders')
     .then(function(response){
       self.orders = response.data;
+      console.log("order data", self.orders);
     });
   }
 
 
-});
+}]);
