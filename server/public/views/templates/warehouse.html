@@ -3,8 +3,9 @@
 <th>Warehouse</th>
 <th>Fulfillment Days</th>
 </tr>
-<tr ng-repeat='building in warehouse.warehouses'>
-  <td ng-model='building.warehouse' >{{building.warehouse}}</td>
-  <td ng-model='building.fulfillment_days'>{{building.fulfillment_days}}</td>
+<tr ng-repeat='(warehouse, fulfillment_days) in warehouse.warehouses'>
+  <!-- <td ng-model='building.warehouse' >{{building.warehouse}}</td>
+  <td ng-model='building.fulfillment_days'>{{building.fulfillment_days}}</td> -->
+  <td> {{warehouse}} </td> <td> {{ fulfillment_days.warehouse }} </td>
 </tr>
 </table>
