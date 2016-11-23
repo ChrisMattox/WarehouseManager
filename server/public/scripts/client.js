@@ -39,13 +39,15 @@ app.controller('HomeController', function() {
 app.controller('WarehouseController', function() {
   console.log('warehouse controller running');
   var self = this;
-  self.message = "Warehouse controller is the best!"
+  self.message = "Warehouse controller is the best!";
+  self.warehouses = [];
+
 
 //get request for warehouse data
   function getWarehouse() {
     $http.get('/warehouse')
     .then(function(response){
-      self.warehouse = response.data;
+      self.warehouses = response.data;
     });
   }
 
