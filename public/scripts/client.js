@@ -7,11 +7,6 @@ app.config(['$routeProvider', function($routeProvider) {
       controller: 'HomeController',
       controllerAs: 'home'
     })
-    .when('/warehouse' ,{
-      templateUrl: '/views/templates/warehouse.html',
-      controller: 'WarehouseController',
-      controllerAs: 'warehouse'
-    })
     .when('/customers' ,{
       templateUrl: '/views/templates/customers.html',
       controller: 'CustomersController',
@@ -28,15 +23,8 @@ app.config(['$routeProvider', function($routeProvider) {
     });
 }]);
 
-app.controller('HomeController', function() {
-  console.log('home controller running');
-  var self = this;
-  self.message = "Home controller is the best!";
-
-});
-
 //warehouse controller
-app.controller('WarehouseController',["$http", function($http) {
+app.controller('aboutController',["$http", function($http) {
   console.log('warehouse controller running');
   var self = this;
   self.message = "Warehouse controller is the best!";
